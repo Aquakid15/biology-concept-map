@@ -1,0 +1,61 @@
+.flowchart-term {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 120px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.flowchart-term:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--term-color);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.flowchart-term.selected {
+  border-color: var(--term-color);
+  box-shadow: 0 0 20px rgba(var(--term-color), 0.4);
+  border-width: 2px;
+}
+
+.term-diagram-container {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.term-name {
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.term-glow {
+  position: absolute;
+  bottom: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  opacity: 0;
+  filter: blur(30px);
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.flowchart-term:hover .term-glow {
+  opacity: 0.15;
+}

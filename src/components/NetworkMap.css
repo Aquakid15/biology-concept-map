@@ -1,0 +1,105 @@
+.network-map {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.network-canvas {
+  flex: 1;
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  position: relative;
+  min-height: calc(100vh - 200px);
+}
+
+.network-canvas svg {
+  width: 100%;
+  height: 100%;
+  min-height: 800px;
+}
+
+.connections-layer {
+  pointer-events: none;
+}
+
+.nodes-layer {
+  pointer-events: bounding-box;
+}
+
+.network-legend {
+  position: fixed;
+  top: 120px;
+  right: 2rem;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  z-index: 100;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.legend-item span {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.instructions {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  padding: 0.9rem 1.25rem;
+  max-width: 320px;
+}
+
+.instructions p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.instructions strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1400px) {
+  .network-canvas svg {
+    min-height: 700px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .network-legend {
+    top: auto;
+    bottom: 2rem;
+    right: 2rem;
+    left: auto;
+  }
+  
+  .instructions {
+    bottom: 2rem;
+    left: 2rem;
+    max-width: 280px;
+  }
+  
+  .network-canvas svg {
+    min-height: 600px;
+  }
+}

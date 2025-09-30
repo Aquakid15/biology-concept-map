@@ -1,0 +1,41 @@
+.flowchart-category {
+  padding: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.flowchart-category:hover {
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.category-header {
+  margin-bottom: 1.5rem;
+}
+
+.category-color-bar {
+  height: 4px;
+  width: 60px;
+  border-radius: 2px;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 20px var(--category-color);
+}
+
+.category-header h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.6rem;
+  color: var(--text-primary);
+}
+
+.category-desc {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.category-terms {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem;
+}

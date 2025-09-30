@@ -1,0 +1,144 @@
+.flowchart-map {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  position: relative;
+}
+
+.flowchart-content {
+  max-width: 1600px;
+  margin: 3rem auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 3rem;
+  position: relative;
+  min-height: 900px;
+}
+
+.flowchart-section {
+  position: relative;
+  z-index: 2;
+}
+
+.section-chemistry {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.section-macromolecules {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.section-cellstructures {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.section-transport {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.flowchart-arrows {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.flowchart-hub {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  padding: 2rem;
+  text-align: center;
+  min-width: 200px;
+}
+
+.flowchart-hub .hub-icon {
+  font-size: 3rem;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+.flowchart-hub h3 {
+  margin: 0.75rem 0 0.5rem 0;
+  font-size: 1.5rem;
+}
+
+.flowchart-hub p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.instructions {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  padding: 0.9rem 1.25rem;
+  max-width: 320px;
+  z-index: 100;
+}
+
+.instructions p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.instructions strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+@media (max-width: 1200px) {
+  .flowchart-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .section-chemistry,
+  .section-macromolecules,
+  .section-cellstructures,
+  .section-transport {
+    grid-column: 1;
+  }
+
+  .section-macromolecules {
+    grid-row: 2;
+  }
+
+  .section-cellstructures {
+    grid-row: 3;
+  }
+
+  .section-transport {
+    grid-row: 4;
+  }
+
+  .flowchart-hub {
+    position: relative;
+    grid-row: 5;
+    transform: none;
+    top: auto;
+    left: auto;
+    margin: 2rem auto;
+  }
+}
